@@ -24,15 +24,15 @@ Top top
 \------sc_fifo<IMAGE> q2
 ```
 ## Module Descriptions
-- Top Module (top): The root of the simulation hierarchy, instantiating and connecting all other modules.
-- Stimulus (stimulus): Reads input images from the file system and feeds them into the simulation.
-- Platform (platform): Contains the core processing units and internal communication channels.
+- **Top Module (top)**: The root of the simulation hierarchy, instantiating and connecting all other modules.
+- **Stimulus (stimulus):** Reads input images from the file system and feeds them into the simulation.
+- **Platform (platform):** Contains the core processing units and internal communication channels.
     - DataIn (din): Handles input data buffering and passes images to the DUT.
-    - Device Under Test (canny): The main processing unit where the Canny edge detection algorithm is implemented.
+    - Design Under Test (canny): The main processing unit where the Canny edge detection algorithm is implemented.
     - DataOut (dout): Handles output data buffering and passes processed images to the monitor.
     - Internal FIFOs (q1, q2): Channels for internal data communication between modules within the platform.
-- Monitor (monitor): Receives processed images from the platform and writes them to output files.
-- Global FIFOs (q1, q2): Channels for communication between the top-level modules.
+- **Monitor (monitor):** Receives processed images from the platform and writes them to output files.
+- **Global FIFOs (q1, q2):** Channels for communication between the top-level modules.
 
 This modular architecture enables **parallel execution** and **mirrors the data flow in an actual hardware system**, allowing for accurate simulation of system behavior.
 
